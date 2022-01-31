@@ -11,19 +11,25 @@ class AddItem extends Component{
 const TodoItems =(props)=>{
   const {items}=props
   const {propdeleteitem}=props
-  const ListItems=items.map(i=>{
-    return (
-       
-      <div>
-        
-      <span>{i.name}</span>
-      <span>{i.age}</span>
-      <span onClick={()=>propdeleteitem(i.id)}>&times;</span>
+  const ListItems=items.length ?(
+    items.map(i=>{
+      return (
+         
+        <div>
+          
+        <span>{i.name}</span>
+        <span>{i.age}</span>
+        <span onClick=
 
-      </div>
-      
-    )
-  })
+{()=>propdeleteitem(i.id)}
+
+>&times;</span>
+  
+        </div>
+        
+      )
+    })
+  ):<p>there is no item to show </p>
   return <>
   <div>
    <> Name</>
@@ -37,7 +43,9 @@ const TodoItems =(props)=>{
 
 //------------App-----------
 
-export default class App extends Component {
+export default class App extends 
+
+Component {
   state ={
     items:[
       {name:'Aly',age:21,id:1},
@@ -45,14 +53,19 @@ export default class App extends Component {
         ]
 
   }
-  deleteItem=e=>{
-  
+  deleteItem=id=>{
+   let items=this.state.items
+   let i=items.map(i=>i.id===id)
+   items.splice(i,1)
+   this.setState({items})
   }
   render(){
   return (
     <div>
       <h1>Todo</h1>
-      < TodoItems items={this.state.items}
+      < TodoItems items=
+
+{this.state.items}
       propdeleteitem={this.deleteItem}
       />
       <AddItem />
