@@ -8,17 +8,28 @@ class AddItem extends Component{
   }
 }
 
+const TodoItems =(props)=>{
+  const {items}=props
+  const ListItems=items.map(i=>{
+    return (
+      <div>
+      <span>{i.name}</span>
+      <span>{i.age}</span>
+      <span>&times;</span>
 
-const TodoItems =()=>{
-  return <div>List Items</div>
+      </div>
+    )
+  })
+  return <div>{ListItems}</div>
 }
+
 
 
 export default class App extends Component {
   state ={
     items:[
       {name:'Aly',age:21},
-          {name:'Adel',age:24}
+       {name:'Adel',age:24}
         ]
 
   }
@@ -26,9 +37,10 @@ export default class App extends Component {
   return (
     <div>
       <h1>Todo</h1>
-      < TodoItems/>
+      < TodoItems items={this.state.items}/>
       <AddItem />
     </div>
   );
 }
 }
+
