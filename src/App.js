@@ -10,6 +10,7 @@ class AddItem extends Component{
 //---------TodoItems------------
 const TodoItems =(props)=>{
   const {items}=props
+  const {propdeleteitem}=props
   const ListItems=items.map(i=>{
     return (
        
@@ -17,7 +18,7 @@ const TodoItems =(props)=>{
         
       <span>{i.name}</span>
       <span>{i.age}</span>
-      <span>&times;</span>
+      <span onClick={()=>propdeleteitem(i.id)}>&times;</span>
 
       </div>
       
@@ -39,16 +40,21 @@ const TodoItems =(props)=>{
 export default class App extends Component {
   state ={
     items:[
-      {name:'Aly',age:21},
-       {name:'Adel',age:24}
+      {name:'Aly',age:21,id:1},
+       {name:'Adel',age:24,id:2}
         ]
 
+  }
+  deleteItem=e=>{
+  
   }
   render(){
   return (
     <div>
       <h1>Todo</h1>
-      < TodoItems items={this.state.items}/>
+      < TodoItems items={this.state.items}
+      propdeleteitem={this.deleteItem}
+      />
       <AddItem />
     </div>
   );
