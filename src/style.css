@@ -1,3 +1,32 @@
+*{
+  box-sizing: border-box;
+}
 h1, p {
   font-family: Lato;
+}
+
+.tcenter{
+  padding-left: 10%;
+}
+
+.container{
+  padding-left: 30%;
+}
+
+
+
+.title{
+  color:white;
+  background-color: cyan;
+  display: inline-block;
+  padding: 10px;
+  border: 0.3px solid black;
+}
+
+.items{
+  color:rgb(5, 180, 98);
+  padding: 10px 20px;
+  display: inline-block;
+  border: 0.3px solid black;
+
 }

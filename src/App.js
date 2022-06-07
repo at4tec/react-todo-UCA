@@ -14,9 +14,9 @@ const TodoItems =(props)=>{
   const ListItems=items.length ? (
      items.map(i=>{
        return<div>      
-        <span>{i.name}</span>
-        <span>{i.age}</span>
-        <span 
+        <span  className='items'>{i.name}</span>
+        <span className='items'>{i.age}</span>
+        <span className='items'
          onClick={()=>propdeleteitem(i.id)}
               >&times;</span>
           </div>    
@@ -25,9 +25,9 @@ const TodoItems =(props)=>{
   
   return <>
   <div>
-   <> Name</>
-   <> Age</>
-   <> Action</>
+   <span className='title'> Name</span>
+   <span className='title' > Age</span>
+   <span className='title'> Action</span>
   </div>
 
   <div>{ListItems}</div>
@@ -62,8 +62,8 @@ Component {
 
   render(){
   return (
-    <div>
-      <h1>Todo</h1>
+    <div className='container'>
+      <h1 className='tcenter'>Todo List</h1>
       < TodoItems items=
 
 {this.state.items}
