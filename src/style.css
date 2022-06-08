@@ -19,13 +19,16 @@ h1, p {
   color:white;
   background-color: cyan;
   display: inline-block;
-  padding: 10px;
+  width:70px;
+  height: 30px;
+  padding: 5px;
   border: 0.3px solid black;
 }
 
 .items{
   color:rgb(5, 180, 98);
-  padding: 10px 20px;
+  padding: 5px;
+  width:70px;
   display: inline-block;
   border: 0.3px solid black;
 
